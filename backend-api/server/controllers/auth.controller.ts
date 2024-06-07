@@ -7,6 +7,7 @@ import { Request, Response, NextFunction } from "express";
 
 export const signup = async (req: Request, res: Response, next: NextFunction) => {
   const { name, email, password } = req.body;
+  if (password.length < 10) return next(errorHandlerFunc(406, "Password is weak! Enter at least 10 characters."));
   const hashedPassword = bcryptjs.hashSync(password, 10);
 
   const newUser = new User({ name, email, password: hashedPassword });

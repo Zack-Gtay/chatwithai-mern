@@ -5,6 +5,7 @@ import morgan from "morgan";
 import userRoutes from './routes/user.route';
 import authRoutes from './routes/auth.route';
 import chatRoutes from './routes/chats.route';
+import cookieParser from 'cookie-parser';
 const app = express();
 const port = 3000;
 dotenv.config();
@@ -21,12 +22,14 @@ mongoose
   })
   .catch((err) => {
     console.error("Failed to connect to MongoDB:", err);
-    process.exit(1); // Exit the process with an error code
+    process.exit(1); 
   });
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(morgan("dev")); // let's delete it when deploying
+
+app.use(cookieParser())
+
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/chats", chatRoutes);
