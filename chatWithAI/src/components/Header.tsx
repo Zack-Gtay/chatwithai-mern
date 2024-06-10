@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       </nav>
       <div className="md:hidden  ">
         <button onClick={toggleMenu}>
-          {menuOpen ? "" : <FaBarsStaggered size={24}  />}
+          {menuOpen ? "" : <FaBarsStaggered size={24} />}
         </button>
       </div>
       <div
@@ -46,10 +46,14 @@ const Header: React.FC = () => {
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
         <button onClick={toggleMenu} className="absolute top-4 right-4">
-          <FaTimes size={24} />
+          <FaTimes size={24} color="black" />
         </button>
-        <Link to={"/sign-in"}>Sign In</Link>
-        <Link to={"/sign-up"}>Sign Up</Link>
+        <Link to={"/sign-in"} className="text-black">
+          Sign In
+        </Link>
+        <Link to={"/sign-up"} className="text-black">
+          Sign Up
+        </Link>
       </div>
     </header>
   );
