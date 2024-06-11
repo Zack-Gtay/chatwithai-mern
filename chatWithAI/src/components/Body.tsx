@@ -51,8 +51,8 @@ const Body = () => {
 
   return (
     <div className="w-full h-screen md:h-[800px] flex flex-col lg:mt-0 md:mt-0 lg:flex-row md:flex-row justify-between lg:h-[500px] mt-0 px-4 md:px-12 lg:px-24">
-      <div className="flex flex-col justify-center h-full gap-8 md:gap-6 lg:gap-8">
-        <h2 className="text-white text-5xl font-medium h-[30%] md:h-[25%]">
+      <div className="flex flex-col justify-center h-full gap-6  md:gap-6 lg:gap-8">
+        <h2 className="text-white text-5xl font-medium h-[30%]  lg:h-[30%] md:h-[25%]">
           <motion.span key={displayText} animate={{ opacity: 1 }}>
             {displayText}
           </motion.span>
